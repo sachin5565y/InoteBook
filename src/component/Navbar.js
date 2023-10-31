@@ -11,7 +11,7 @@ const Navbar = (props) => {
     }
     let location = useLocation();
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">iNotebook</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,15 +25,13 @@ const Navbar = (props) => {
                         <li className="nav-item">
                             <Link className={`nav-link ${location.pathname === "/about" ? "active" : ""}`} to="/about">About</Link>
                         </li>
+                        
 
                     </ul>
-                    <div className="form-check form-switch text-light mx-2">
-                        <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" />
-                        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable DarkMode</label>
-                    </div>
-                    {localStorage.getItem('token') ? <button className='btn btn-primary' onClick={handleLogout}>Logout</button> : <form className="d-flex">
-                        <Link className="btn btn-primary mx-2" to="/login" role="button">Login</Link>
-                        <Link className="btn btn-primary mx-1`" to="signup" role="button">Signup</Link>
+                  -
+                    {localStorage.getItem('token') ? <button className='btn btn-danger' onClick={handleLogout}>Logout</button> : <form className="d-flex">
+                        <Link className="btn btn-danger mx-2" to="/login" role="button">Login</Link>
+                        <Link className="btn btn-danger mx-1`" to="signup" role="button">Signup</Link>
                     </form>}
                 </div>
             </div>

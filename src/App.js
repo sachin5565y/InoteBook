@@ -8,8 +8,7 @@ import NoteState from './context/notes/NoteState';
 import Alert from './component/Alert';
 import Signup from './component/Signup';
 import Login from './component/Login';
-import Footer from './component/footer/Footer'
-import Darkmode from './component/Darkmode';
+import Footer from './component/footer/Footer';
 function App() {
 
   const [alert, setAlert] = useState(null);
@@ -41,6 +40,9 @@ function App() {
         </Router>
       </NoteState>
       <Footer/>
+    
+    
+      
 
     </>
   );

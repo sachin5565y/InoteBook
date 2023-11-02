@@ -36,8 +36,8 @@ const Login = (props) => {
             <img className="img-fluid" src={avataars} alt="register" style={{ width: "100%", height: "75vh", objectFit: "cover" }} />
           </div>
           <div className="col-md-7 ps-5 pe-5 pt-5" style={{ width: "50%" }}>
-          <h2 style={{ fontWeight: "Bold" }}>Create a new account</h2>
-                    <p className="mb-5">Use your email to create a new account</p>
+          <h2 style={{ fontWeight: "Bold" }}>Login</h2>
+                    <p className="mb-5">Use your email to enter in the internal platform</p>
       <form onSubmit={handleSubmit}>
   <div className="mb-3">
     <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>

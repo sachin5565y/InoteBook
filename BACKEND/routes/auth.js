@@ -98,4 +98,25 @@ try {
 }
 })
 
+
+// ROUTE 4: Admin Route to Get All Users (Requires admin privileges)
+router.get('/admin/users', fetchuser, async (req, res) => {
+  try {
+    // Check if the user making the request has admin privileges
+    if (!req.user.isAdmin) {
+      return res.status(403).json({ error: 'Permission denied' });
+    }
+
+    // Query the database to retrieve all users (excluding password field)
+    const users = await User.find().select('-password');
+    
+    // Send the list of users as a response
+    res.json(users);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send('Internal server error occurred');
+  }
+});
+
+
 module.exports = router
